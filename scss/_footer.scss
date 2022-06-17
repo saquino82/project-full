@@ -2,7 +2,8 @@
 
 footer {
     grid-area: pie;
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
     background-image: linear-gradient($colorPrincipal, $colorSecundario);
     font-family: 'Indie Flower', cursive;
     color: $colorTerciario;
