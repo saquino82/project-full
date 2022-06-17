@@ -1,0 +1,86 @@
+@media screen and (max-width:768px) {
+
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "encabezado"
+            "cuerpo"
+            "pie";
+        padding: 10px;
+
+        header {
+
+            .logo-principal {
+                
+                .latido {
+                    width: 50%;
+                 }
+            }
+
+            .titulo-trincipal {
+                font-size: .5em;
+                margin: 1em;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        main {
+            .imagen-fondo {
+                flex-grow: initial;
+            }
+
+            h3 {
+                font-size: 1rem;
+                margin: 1em;
+                padding: 0.2em;
+                font-family: 'Indie Flower', cursive;
+                text-decoration: underline;
+            }
+
+            h4 {
+                font-size: 1rem;
+            }
+
+            p {
+                font-size: 0.7rem;
+            }
+        }
+
+        footer {
+
+            .contactos {
+                font-size: 0.8rem;
+
+                h3 {
+                    visibility: hidden;
+                }
+
+                .direc {
+                    visibility: hidden;
+                }
+
+                .tel {
+                    visibility: hidden;
+                }
+            }
+
+            .ubicacion-pie {
+                visibility: hidden;
+            }
+
+            .redes {
+                font-size: 0.5rem;
+
+                h4 {
+                    visibility: hidden;
+                }
+                h5 {
+                    visibility: hidden;
+                }
+            }
+
+        }
+    }
+}

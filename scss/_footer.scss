@@ -1,0 +1,38 @@
+// estilos de footer
+
+footer {
+    grid-area: pie;
+    display: flex;
+    background-image: linear-gradient($colorPrincipal, $colorSecundario);
+    font-family: 'Indie Flower', cursive;
+    color: $colorTerciario;
+    gap: 1em;
+
+    .logo-foot {
+        align-content: flex-start;
+        width: 30%;
+    }
+    .derechos {
+        align-content: flex-start;
+        text-size-adjust: 2em;
+        font-size: 0.5rem;
+    }
+    .contactos {
+        text-align: center;
+        .contac-pie {
+            display: inline-block;
+            margin: 0.2em;
+            padding: 0.2em;
+            flex-wrap: wrap;
+            list-style-type: none;
+        }
+    }
+    .ubicacion-pie {
+        align-content: stretch;
+    }
+    
+    .redes {
+        align-content: flex-end;
+    }
+
+}

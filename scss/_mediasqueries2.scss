@@ -1,0 +1,83 @@
+@media screen and (min-width:769px) {
+
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: "encabezado"
+            "cuerpo"
+            "pie";
+        padding: 10px;
+
+        header {
+            .navbar-estilo {
+
+                //movimiento de los menu al pasar por encima de ellos
+                .navbar-brand:hover {
+                    transform: scale(1.5);
+                }
+            }
+
+            .logo-principal {
+                width: 25%;
+            }
+
+            .titulo-principal {
+                margin: 1.5em;
+                text-align: center;
+                justify-content: center;
+
+                h1 {
+                    font-size: 5rem;
+                }
+
+                h2 {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        main {
+            .imagen-fondo {
+                flex-grow: initial;
+            }
+
+            .accordion-header {
+                button {
+                    font-size: 2rem;
+                }
+            }
+
+            .accordion-body {
+                font-size: 1.4rem;
+            }
+
+            h4 {
+                font-size: 1rem;
+            }
+
+            .imagenes-varias {
+                width: 30%;
+            }
+
+            .list-mak {
+                li {
+                    font-size: 2rem;
+                    color: $colorTerciario;
+                }
+            }
+        }
+
+        footer {
+
+            .contactos {
+                font-size: 1rem;
+            }
+
+            .redes {
+                font-size: 1rem;
+            }
+
+        }
+    }
+}

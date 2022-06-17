@@ -1,0 +1,12 @@
+@mixin flex ($margin, $padding, $size){
+margin: $margin;
+padding: $padding;
+font-size: $size;
+}
+
+@mixin cuadro ($margin, $border, $borderw, $borders) {
+    margin: $margin;
+    border: $border;
+    border-width: $borderw;
+    border-style: $borders;
+}
