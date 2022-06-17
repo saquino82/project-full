@@ -119,19 +119,29 @@ main {
 
 footer {
   grid-area: pie;
-  display: flex;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas: "logo contactos direccion redes";
+  flex-wrap: wrap;
   background-image: linear-gradient(#FFC288, #FCECDD);
-  font-family: 'Indie Flower', cursive;
+  font-family: "Indie Flower", cursive;
   color: #FF6701;
-  gap: 1em; }
-  footer .logo-foot {
-    align-content: flex-start;
-    width: 30%; }
-  footer .derechos {
-    align-content: flex-start;
-    text-size-adjust: 2em;
-    font-size: 0.5rem; }
+  gap: 1em;
+  text-align: top;
+  justify-content: top;
+  align-items: top; }
+  footer .copy {
+    grid-area: logo;
+    display: flex;
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    text-align: center; }
+    footer .copy img {
+      align-self: center;
+      justify-self: center; }
   footer .contactos {
+    grid-area: contactos;
     text-align: center; }
     footer .contactos .contac-pie {
       display: inline-block;
@@ -140,9 +150,13 @@ footer {
       flex-wrap: wrap;
       list-style-type: none; }
   footer .ubicacion-pie {
-    align-content: stretch; }
+    justify-self: center;
+    grid-area: direccion;
+    align-content: center;
+    justify-content: center; }
   footer .redes {
-    align-content: flex-end; }
+    grid-area: redes;
+    text-align: center; }
 
 @media screen and (max-width: 768px) {
   body {
@@ -170,22 +184,34 @@ footer {
       font-size: 1rem; }
     body main p {
       font-size: 0.7rem; }
-    body footer .contactos {
-      font-size: 0.8rem; }
-      body footer .contactos h3 {
+    body footer {
+      grid-template-columns: 33% 33% 33%;
+      grid-template-areas: "logo contactos redes";
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; }
+      body footer .copy .derechos {
+        font-size: 0.8rem;
+        margin: 1em; }
+      body footer .contactos {
+        grid-area: contactos;
+        font-size: 0.8rem; }
+        body footer .contactos h3 {
+          visibility: hidden; }
+        body footer .contactos .direc {
+          visibility: hidden; }
+        body footer .contactos .tel {
+          visibility: hidden; }
+      body footer .ubicacion-pie {
         visibility: hidden; }
-      body footer .contactos .direc {
-        visibility: hidden; }
-      body footer .contactos .tel {
-        visibility: hidden; }
-    body footer .ubicacion-pie {
-      visibility: hidden; }
-    body footer .redes {
-      font-size: 0.5rem; }
-      body footer .redes h4 {
-        visibility: hidden; }
-      body footer .redes h5 {
-        visibility: hidden; } }
+      body footer .redes {
+        grid-area: redes;
+        font-size: 0.5rem; }
+        body footer .redes h4 {
+          visibility: hidden; }
+        body footer .redes h5 {
+          visibility: hidden; } }
 
 @media screen and (min-width: 769px) {
   body {
