@@ -1,39 +1,65 @@
 // estilos de footer
 
 footer {
-    grid-area: pie;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    background-image: linear-gradient($colorPrincipal, $colorSecundario);
-    font-family: 'Indie Flower', cursive;
-    color: $colorTerciario;
-    gap: 1em;
+  grid-area: pie;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  //assignar el area a cada uno de los elementos
+  grid-template-areas: "logo contactos direccion redes";
+  flex-wrap: wrap;
 
-    .logo-foot {
-        align-content: flex-start;
-        width: 30%;
-    }
-    .derechos {
-        align-content: flex-start;
-        text-size-adjust: 2em;
-        font-size: 0.5rem;
-    }
-    .contactos {
-        text-align: center;
-        .contac-pie {
-            display: inline-block;
-            margin: 0.2em;
-            padding: 0.2em;
-            flex-wrap: wrap;
-            list-style-type: none;
-        }
-    }
-    .ubicacion-pie {
-        align-content: stretch;
-    }
+  background-image: linear-gradient($colorPrincipal, $colorSecundario);
+  font-family: "Indie Flower", cursive;
+  color: $colorTerciario;
+  gap: 1em;
+  text-align: top;
+  justify-content: top;
+  align-items: top;
+  .copy {
+    grid-area: logo;
+    display: flex;
+    display: inline-block;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    img {
+        //center img
+        align-self: center;
+        justify-self: center;
+        //border: 1px solid red;
     
-    .redes {
-        align-content: flex-end;
     }
+  }
+  .contactos {
+    grid-area: contactos;
+    text-align: center;
+    .contac-pie {
+      display: inline-block;
+      margin: 0.2em;
+      padding: 0.2em;
+      flex-wrap: wrap;
+      list-style-type: none;
+    }
+  }
+  .ubicacion-pie {
+    //center all elements in the grid
 
+    justify-self: center;
+
+
+
+    grid-area: direccion;
+    align-content: center;
+
+    justify-content: center;
+    
+  }
+
+  .redes {
+    grid-area: redes;
+    text-align: center;
+    
+    //center all elements in the grid
+    
+  }
 }

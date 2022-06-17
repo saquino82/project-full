@@ -49,8 +49,22 @@
         }
 
         footer {
+            grid-template-columns: 33% 33% 33%;
+            //assignar el area a cada uno de los elementos
+            grid-template-areas: "logo contactos redes";
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
 
+            .copy {
+                .derechos {
+                    font-size: 0.8rem;
+                    margin: 1em;
+                }
+            }
             .contactos {
+                grid-area: contactos;
                 font-size: 0.8rem;
 
                 h3 {
@@ -67,10 +81,12 @@
             }
 
             .ubicacion-pie {
+
                 visibility: hidden;
             }
 
             .redes {
+                grid-area: redes;
                 font-size: 0.5rem;
 
                 h4 {
