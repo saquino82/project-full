@@ -10,9 +10,12 @@ main {
     }
 
     .accordion-header {
-        button {
+        
+        .accordion-button {
             color: $colorTerciario;
             background-color: $colorSecundario;
+        align-items: center;
+           
         }
     }
 
@@ -20,15 +23,6 @@ main {
         color: $colorTerciario;
     }
 
-    .list-mak ul {
-        justify-content: center;
-
-        li {
-            list-style-type: none;
-            display: inline-block;
-            @include flex (0.1rem, 0.8rem, 1.2rem);
-        }
-    }
 
     //acomodamos los main de los distintos html
     .main-tienda {

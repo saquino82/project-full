@@ -5,7 +5,7 @@
 
 header {
   grid-area: encabezado;
-  display: flex;
+  display: grid;
   grid-template-areas: "logo titulo menus";
   background-image: linear-gradient(#FCECDD, #FFC288);
   font-family: 'Indie Flower', cursive;
@@ -15,12 +15,14 @@ header {
   z-index: 1; }
   header .navbar-estilo {
     grid-area: menu; }
-  header .logo-principal .latido {
-    width: 100%;
-    animation-name: logo-late;
-    animation-timing-function: linear;
-    animation-duration: 8s;
-    animation-iteration-count: infinite; }
+  header .logo-principal {
+    grid-area: logo;
+    display: flex; }
+    header .logo-principal img {
+      animation-name: logo-late;
+      animation-timing-function: linear;
+      animation-duration: 8s;
+      animation-iteration-count: infinite; }
 
 @keyframes logo-late {
   from {
@@ -28,6 +30,7 @@ header {
   to {
     transform: scale(1.05); } }
   header .titulo-principal {
+    grid-area: titulo;
     margin: 1em;
     text-align: center;
     justify-content: center; }
@@ -40,19 +43,12 @@ main {
   main .imagen-fondo {
     width: 100%;
     justify-items: center; }
-  main .accordion-header button {
+  main .accordion-header .accordion-button {
     color: #FF6701;
-    background-color: #FCECDD; }
+    background-color: #FCECDD;
+    align-items: center; }
   main .accordion-body {
     color: #FF6701; }
-  main .list-mak ul {
-    justify-content: center; }
-    main .list-mak ul li {
-      list-style-type: none;
-      display: inline-block;
-      margin: 0.1rem;
-      padding: 0.8rem;
-      font-size: 1.2rem; }
   main .main-tienda {
     display: flex;
     flex-wrap: wrap; }
@@ -121,7 +117,7 @@ footer {
   grid-area: pie;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-areas: "logo contactos direccion redes";
+  grid-template-areas: "logof contactos direccion redes";
   flex-wrap: wrap;
   background-image: linear-gradient(#FFC288, #FCECDD);
   font-family: "Indie Flower", cursive;
@@ -131,7 +127,7 @@ footer {
   justify-content: top;
   align-items: top; }
   footer .copy {
-    grid-area: logo;
+    grid-area: logof;
     display: flex;
     display: inline-block;
     align-self: center;
@@ -140,6 +136,9 @@ footer {
     footer .copy img {
       align-self: center;
       justify-self: center; }
+    footer .copy .derechos {
+      grid-area: logof;
+      font-size: 1em; }
   footer .contactos {
     grid-area: contactos;
     text-align: center; }
@@ -165,53 +164,63 @@ footer {
     grid-template-rows: auto auto auto;
     grid-template-areas: "encabezado" "cuerpo" "pie";
     padding: 10px; }
-    body header .logo-principal .latido {
-      width: 50%; }
-    body header .titulo-trincipal {
-      font-size: .5em;
-      margin: 1em;
-      text-align: center;
-      justify-content: center; }
-    body main .imagen-fondo {
-      flex-grow: initial; }
-    body main h3 {
-      font-size: 1rem;
-      margin: 1em;
-      padding: 0.2em;
-      font-family: 'Indie Flower', cursive;
-      text-decoration: underline; }
-    body main h4 {
-      font-size: 1rem; }
-    body main p {
-      font-size: 0.7rem; }
-    body footer {
-      grid-template-columns: 33% 33% 33%;
-      grid-template-areas: "logo contactos redes";
+    body header {
+      grid-area: encabezado;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center; }
-      body footer .copy .derechos {
-        font-size: 0.8rem;
-        margin: 1em; }
-      body footer .contactos {
-        grid-area: contactos;
-        font-size: 0.8rem; }
-        body footer .contactos h3 {
-          visibility: hidden; }
-        body footer .contactos .direc {
-          visibility: hidden; }
-        body footer .contactos .tel {
-          visibility: hidden; }
-      body footer .ubicacion-pie {
+      body header .logo-principal {
+        width: 30%; }
+    body .titulo-trincipal {
+      font-size: .5em;
+      margin: 1em;
+      align-self: center;
+      justify-self: center;
+      text-align: center; }
+  main .imagen-fondo {
+    flex-grow: initial; }
+  main h3 {
+    font-size: 1rem;
+    margin: 1em;
+    padding: 0.2em;
+    font-family: 'Indie Flower', cursive;
+    text-decoration: underline; }
+  main h4 {
+    font-size: 1rem; }
+  main p {
+    font-size: 0.7rem; }
+  footer {
+    grid-area: pie;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    footer .copy .derechos {
+      font-size: 0.8rem;
+      margin: 1em; }
+    footer .contactos {
+      grid-area: contactos;
+      font-size: 0.8rem; }
+      footer .contactos h3 {
         visibility: hidden; }
-      body footer .redes {
-        grid-area: redes;
-        font-size: 0.5rem; }
-        body footer .redes h4 {
-          visibility: hidden; }
-        body footer .redes h5 {
-          visibility: hidden; } }
+      footer .contactos .contac-pie li {
+        list-style: none;
+        justify-content: center;
+        align-items: center; }
+      footer .contactos .contac-pie .direc {
+        visibility: hidden; }
+      footer .contactos .contac-pie .tel {
+        visibility: hidden; }
+    footer .ubicacion-pie {
+      visibility: hidden; }
+    footer .redes {
+      grid-area: redes;
+      font-size: 0.5rem; }
+      footer .redes h4 {
+        visibility: hidden; }
+      footer .redes h5 {
+        visibility: hidden; } }
 
 @media screen and (min-width: 769px) {
   body {
@@ -222,14 +231,12 @@ footer {
     padding: 10px; }
     body header .navbar-estilo .navbar-brand:hover {
       transform: scale(1.5); }
-    body header .logo-principal {
-      width: 25%; }
     body header .titulo-principal {
       margin: 1.5em;
       text-align: center;
       justify-content: center; }
       body header .titulo-principal h1 {
-        font-size: 5rem; }
+        font-size: rem; }
       body header .titulo-principal h2 {
         font-size: 3rem; }
     body main .imagen-fondo {
@@ -242,9 +249,6 @@ footer {
       font-size: 1rem; }
     body main .imagenes-varias, body main .imagenes-varias1, body main .card {
       width: 30%; }
-    body main .list-mak li {
-      font-size: 2rem;
-      color: #FF6701; }
     body footer .contactos {
       font-size: 1rem; }
     body footer .redes {

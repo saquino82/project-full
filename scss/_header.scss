@@ -2,7 +2,7 @@
 
 header {
     grid-area: encabezado;
-    display: flex;
+    display: grid;
     grid-template-areas: "logo titulo menus";
     background-image: linear-gradient($colorSecundario, $colorPrincipal);
     font-family: 'Indie Flower', cursive;
@@ -18,10 +18,11 @@ header {
 
     // propiedades del logo en encabezado
     .logo-principal {
-      
-        //animacion del logo principal
-        .latido {
-            width: 100%;
+    grid-area: logo;
+    display: flex;
+    //animacion del logo principal
+            img {
+            
             animation-name: logo-late;
             animation-timing-function: linear;
             animation-duration: 8s;
@@ -40,6 +41,7 @@ header {
     }
 // propiedades del titulo-eslogan
 .titulo-principal {
+    grid-area: titulo;
     margin: 1em;
     text-align: center;
     justify-content: center;

@@ -20,7 +20,8 @@ body {
     height: 100vh;
     grid-template-columns: 100%;
     grid-template-rows: auto auto auto auto;
-    grid-template-areas: "menu"
+    grid-template-areas: 
+        "menu"
         "encabezado"
         "cuerpo"
         "pie";

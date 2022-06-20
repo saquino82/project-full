@@ -4,73 +4,84 @@
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto auto auto;
-        grid-template-areas: "encabezado"
+        grid-template-areas:
+            "encabezado"
             "cuerpo"
             "pie";
         padding: 10px;
 
         header {
-
-            .logo-principal {
-                
-                .latido {
-                    width: 50%;
-                 }
-            }
-
-            .titulo-trincipal {
-                font-size: .5em;
-                margin: 1em;
-                text-align: center;
-                justify-content: center;
-            }
-        }
-
-        main {
-            .imagen-fondo {
-                flex-grow: initial;
-            }
-
-            h3 {
-                font-size: 1rem;
-                margin: 1em;
-                padding: 0.2em;
-                font-family: 'Indie Flower', cursive;
-                text-decoration: underline;
-            }
-
-            h4 {
-                font-size: 1rem;
-            }
-
-            p {
-                font-size: 0.7rem;
-            }
-        }
-
-        footer {
-            grid-template-columns: 33% 33% 33%;
-            //assignar el area a cada uno de los elementos
-            grid-template-areas: "logo contactos redes";
+            grid-area: encabezado;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
 
-            .copy {
-                .derechos {
-                    font-size: 0.8rem;
-                    margin: 1em;
-                }
+            .logo-principal {
+                width: 30%;
             }
-            .contactos {
-                grid-area: contactos;
+        }
+
+        .titulo-trincipal {
+            font-size: .5em;
+            margin: 1em;
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+        }
+    }
+
+    main {
+        .imagen-fondo {
+            flex-grow: initial;
+        }
+
+        h3 {
+            font-size: 1rem;
+            margin: 1em;
+            padding: 0.2em;
+            font-family: 'Indie Flower', cursive;
+            text-decoration: underline;
+        }
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: 0.7rem;
+        }
+    }
+
+    footer {
+        grid-area: pie;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .copy {
+            .derechos {
                 font-size: 0.8rem;
+                margin: 1em;
+            }
+        }
 
-                h3 {
-                    visibility: hidden;
+        .contactos {
+            grid-area: contactos;
+            font-size: 0.8rem;
+
+            h3 {
+                visibility: hidden;
+            }
+
+            .contac-pie {
+                li {
+                    list-style: none;
+                    justify-content: center;
+                    align-items: center;
+
                 }
-
                 .direc {
                     visibility: hidden;
                 }
@@ -79,24 +90,26 @@
                     visibility: hidden;
                 }
             }
+        }
 
-            .ubicacion-pie {
+        .ubicacion-pie {
 
+            visibility: hidden;
+        }
+
+        .redes {
+            grid-area: redes;
+            font-size: 0.5rem;
+
+
+            h4 {
                 visibility: hidden;
             }
 
-            .redes {
-                grid-area: redes;
-                font-size: 0.5rem;
-
-                h4 {
-                    visibility: hidden;
-                }
-                h5 {
-                    visibility: hidden;
-                }
+            h5 {
+                visibility: hidden;
             }
-
         }
+
     }
 }
